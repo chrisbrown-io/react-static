@@ -18,19 +18,19 @@ export default {
       {
         path: '/blog',
         component: 'src/containers/Blog',
-        getProps: () => ({
+        getData: () => ({
           posts,
         }),
         children: posts.map(post => ({
           path: `/post/${post.id}`,
           component: 'src/containers/Post',
-          getProps: () => ({
+          getData: () => ({
             post,
           }),
         })),
       },
       {
-        is404: true,
+        path: '404',
         component: 'src/containers/404',
       },
     ]
@@ -43,7 +43,9 @@ export default {
   },
   Document: class CustomDocument extends Component {
     render () {
-      const { Html, Head, Body, children, renderMeta } = this.props
+      const {
+        Html, Head, Body, children, renderMeta,
+      } = this.props
 
       return (
         <Html>

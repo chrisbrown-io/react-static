@@ -1,15 +1,16 @@
 import React from 'react'
 import { Router, Link } from 'react-static'
+import { hot } from 'react-hot-loader'
 //
 import Routes from 'react-static-routes'
 
 import './app.scss'
 
-export default () => (
+const App = () => (
   <Router>
     <div>
       <nav>
-        <Link to="/">Home</Link>
+        <Link exact to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/blog">Blog</Link>
       </nav>
@@ -19,3 +20,5 @@ export default () => (
     </div>
   </Router>
 )
+
+export default hot(module)(App)

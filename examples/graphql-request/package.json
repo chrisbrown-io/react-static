@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "react-static start",
+    "stage": "react-static build --staging",
     "build": "react-static build",
     "serve": "serve dist -p 3000"
   },
@@ -14,7 +15,7 @@
     "react-dom": "^16.2.0",
     "react-markdown": "^3.1.0",
     "react-router": "^4.2.0",
-    "react-static": "^4.3.4"
+    "react-static": "^5"
   },
   "devDependencies": {
     "eslint-config-react-tools": "^1.0.10",

@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "react-static start",
+    "stage": "react-static build --staging",
     "build": "react-static build",
     "serve": "serve dist -p 3000"
   },
@@ -21,7 +22,7 @@
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
-    "react-static": "^4.0.1",
+    "react-static": "^5",
     "redux": "^3.7.2"
   },
   "devDependencies": {

@@ -2,9 +2,6 @@ import axios from 'axios'
 
 export default {
   preact: true,
-  getSiteProps: () => ({
-    title: 'React Static',
-  }),
   getRoutes: async () => {
     const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
     return [
@@ -19,19 +16,19 @@ export default {
       {
         path: '/blog',
         component: 'src/containers/Blog',
-        getProps: () => ({
+        getData: () => ({
           posts,
         }),
         children: posts.map(post => ({
           path: `/post/${post.id}`,
           component: 'src/containers/Post',
-          getProps: () => ({
+          getData: () => ({
             post,
           }),
         })),
       },
       {
-        is404: true,
+        path: '404',
         component: 'src/containers/404',
       },
     ]
